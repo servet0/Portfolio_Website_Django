@@ -49,6 +49,19 @@ class SocialMedia(models.Model):
         verbose_name = ("SocialMedia")
         verbose_name_plural = ("Sosyal Medya")
 
+class Footer(models.Model):
+    copyright = models.CharField(max_length=400, null=True, blank=True)
+    copyright_text = models.TextField(null=True, blank=True)
+    privacy = models.TextField(null=True, blank=True)
+    terms = models.TextField(null=True, blank=True)
+    contact = models.TextField(null=True, blank=True)
+
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("Footer")
+        verbose_name_plural = ("Footer")
+
 
 
 
