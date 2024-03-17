@@ -65,16 +65,24 @@
                         <div class="col-xxl-8">
                             <div class="text-center my-5">
                                 {% for about in abouts %}
-                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">{{about.about}}</span></h2>
-                                <p class="lead fw-light mb-4">{{about.me}}</p>
-                                <p class="text-muted">{{about.des}}</p>
+                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">{{about.about | safe}}</span></h2>
+                                <p class="lead fw-light mb-4">{{about.me | safe}}</p>
+                                <p class="text-muted">{{about.description | safe }}</p>
                                 {% endfor %}
                                 {% for social in socials %}
                                 <div class="d-flex justify-content-center fs-2 gap-4">
+                                    {% if social.instagram %}
                                     <a class="text-gradient" href="{{social.instagram}}"><i class="bi bi-instagram"></i></a>
+                                    {% endif %}
+                                    {% if social.twitter %}
                                     <a class="text-gradient" href="{{social.twitter}}"><i class="bi bi-twitter"></i></a>
+                                    {% endif %}
+                                    {% if social.linkedin %}
                                     <a class="text-gradient" href="{{social.linkedin}}"><i class="bi bi-linkedin"></i></a>
+                                    {% endif %}
+                                    {% if social.github %}
                                     <a class="text-gradient" href="{{social.github}}"><i class="bi bi-github"></i></a>
+                                    {% endif %}
                                 </div>
                                 {% endfor %}
                             </div>
