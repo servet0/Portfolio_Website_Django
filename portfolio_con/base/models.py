@@ -42,6 +42,7 @@ class SocialMedia(models.Model):
     twitter = models.URLField(null=True, blank=True)
     linkedin = models.URLField(null=True, blank=True)
     github = models.URLField(null=True, blank=True)
+    
     date = models.DateTimeField(auto_now=True)
 
     class Meta:
