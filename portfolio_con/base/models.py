@@ -26,4 +26,30 @@ class Main(models.Model):
         verbose_name = ("Main")
         verbose_name_plural = ("Anasayfadaki ilk görünen yazılar")
 
+class About(models.Model):
+    about = models.CharField(max_length=200, null=True, blank=True)
+    me = RichTextField(null=True, blank=True)
+    description = RichTextField(null=True, blank=True)
+
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("About")
+        verbose_name_plural = ("Hakkımda")
+
+class SocialMedia(models.Model):
+    instagram = models.URLField(null=True, blank=True)
+    twitter = models.URLField(null=True, blank=True)
+    linkedin = models.URLField(null=True, blank=True)
+    github = models.URLField(null=True, blank=True)
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("SocialMedia")
+        verbose_name_plural = ("Sosyal Medya")
+
+
+
+
+
 # Create your models here.
