@@ -62,6 +62,19 @@ class Footer(models.Model):
         verbose_name = ("Footer")
         verbose_name_plural = ("Footer")
 
+class Projects(models.Model):
+    name = models.CharField(max_length=500, null=True, blank=True)
+    description = RichTextField(null=True, blank=True)
+    image = models.ImageField(upload_to='project_image', null=True, blank=True)
+
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("Projects")
+        verbose_name_plural = ("Projeler")
+
+
+
 
 
 
