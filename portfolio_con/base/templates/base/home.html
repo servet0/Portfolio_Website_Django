@@ -5,22 +5,20 @@
             <header class="py-5">
                 <div class="container px-5 pb-5">
                     {% for main in mains %}
-                    <div class="row gx-5 align-items-center">
-                       
-                        <div class="col-xxl-5">
-                            <!-- Header text content-->
-                            <div class="text-center text-xxl-start">
-                                <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">{{main.tool | safe}}</div></div>
-                                <div class="fs-3 fw-light text-muted">{{main.first_text | safe}}</div>
-                                <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">{{main.text}}</span></h1>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">{{main.resume}}</a>
-                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{% url 'project' %}">{{main.projects}}</a>
-                                </div>
-                            </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center vh-100 text-center">
+                        <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
+                            <div class="text-uppercase">{{main.tool | safe}}</div>
                         </div>
-                        
+                        <div class="fs-3 fw-light text-muted">{{main.first_text | safe}}</div>
+                        <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">{{main.text}}</span></h1>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                            <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">{{main.resume}}</a>
+                            <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{% url 'project' %}">{{main.projects}}</a>
+                        </div>
                     </div>
+                    
+                    
+                    
                     {% endfor %}
                 </div>
             </header>
@@ -38,16 +36,16 @@
                                 {% for social in socials %}
                                 <div class="d-flex justify-content-center fs-2 gap-4">
                                     {% if social.instagram %}
-                                    <a class="text-gradient" href="{{social.instagram}}"><i class="bi bi-instagram"></i></a>
+                                    <a class="text-gradient" href="{{social.instagram}}" target="_blank"><i class="bi bi-instagram"></i></a>
                                     {% endif %}
                                     {% if social.twitter %}
-                                    <a class="text-gradient" href="{{social.twitter}}"><i class="bi bi-twitter"></i></a>
+                                    <a class="text-gradient" href="{{social.twitter}}" target="_blank"><i class="bi bi-twitter"></i></a>
                                     {% endif %}
                                     {% if social.linkedin %}
-                                    <a class="text-gradient" href="{{social.linkedin}}"><i class="bi bi-linkedin"></i></a>
+                                    <a class="text-gradient" href="{{social.linkedin}}" target="_blank"><i class="bi bi-linkedin"></i></a>
                                     {% endif %}
                                     {% if social.github %}
-                                    <a class="text-gradient" href="{{social.github}}"><i class="bi bi-github"></i></a>
+                                    <a class="text-gradient" href="{{social.github}}" target="_blank"><i class="bi bi-github"></i></a>
                                     {% endif %}
                                 </div>
                                 {% endfor %}

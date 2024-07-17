@@ -17,11 +17,20 @@ def home(request):
     return render(request, 'base/home.html', context)
 
 def projects(request):
+    navbars = Navbar.objects.first()
+    mains = Main.objects.all().order_by('date')
+    abouts = About.objects.all().order_by('date')
+    socials = SocialMedia.objects.all().order_by('date')
+    footers = Footer.objects.all().order_by('date')
     projects = Projects.objects.all().order_by('-date')
 
-    context = {
-        'projects': projects,
-    }
+    context = {'navbars': navbars,
+               'mains': mains,
+               'abouts': abouts,
+               'socials': socials,
+               'footers': footers,
+               'projects': projects,
+               }
 
     return render(request, 'base/projects.html', context)
 

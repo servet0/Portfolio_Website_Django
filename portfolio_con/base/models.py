@@ -65,7 +65,7 @@ class Footer(models.Model):
 class Projects(models.Model):
     name = models.CharField(max_length=500, null=True, blank=True)
     description = RichTextField(null=True, blank=True)
-    image = models.ImageField(upload_to='project_image', null=True, blank=True)
+    image = models.ImageField(null=True, blank=True, upload_to='project_image')
 
     date = models.DateTimeField(auto_now=True)
 
