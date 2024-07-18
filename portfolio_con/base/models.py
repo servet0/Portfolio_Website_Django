@@ -63,6 +63,7 @@ class Footer(models.Model):
         verbose_name_plural = ("Footer")
 
 class Projects(models.Model):
+    title = models.CharField(max_length=300, null=True, blank=True)
     name = models.CharField(max_length=500, null=True, blank=True)
     description = RichTextField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to='project_image')
@@ -72,6 +73,41 @@ class Projects(models.Model):
     class Meta:
         verbose_name = ("Projects")
         verbose_name_plural = ("Projeler")
+
+class Resume(models.Model):
+    title_resume = models.CharField(max_length=300, null=True, blank=True)
+
+    title_experience = models.CharField(max_length=300, null=True, blank=True)
+    date_experience = models.CharField(max_length=500, null=True, blank=True)
+    company_experience = models.CharField(max_length=700, null=True, blank=True)
+    location_experience = models.CharField(max_length=700, null=True, blank=True)
+    description_experience = RichTextField(null=True, blank=True)
+
+    title_education = models.CharField(max_length=300, null=True, blank=True)
+    date_education = models.CharField(max_length=500, null=True, blank=True)
+    school_education = models.CharField(max_length=700, null=True, blank=True)
+    location_education = models.CharField(max_length=700, null=True, blank=True)
+    departman_education = models.CharField(max_length=1000, null=True, blank=True)
+    description_education = RichTextField(null=True, blank=True)
+
+    title_skills = models.CharField(max_length=500, null=True, blank=True)
+    text1_skills = models.TextField(null=True, blank=True)
+    text2_skills = models.TextField(null=True, blank=True)
+    text3_skills = models.TextField(null=True, blank=True)
+
+    title_languages = models.CharField(max_length=500, null=True, blank=True)
+    text1_languages = models.TextField(null=True, blank=True)
+    text2_languages = models.TextField(null=True, blank=True)
+    text3_languages = models.TextField(null=True, blank=True)
+
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("Resume")
+        verbose_name_plural = ("Özgeçmiş")
+
+
+    
 
 
 
