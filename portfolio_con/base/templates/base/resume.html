@@ -24,18 +24,18 @@
                             </div>
                             <!-- Experience Card 1-->
                             <div class="card shadow border-0 rounded-4 mb-5">
-                                {% for resume in resumes %}
+                                {% for experience in experiences %}
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
                                         <div class="col text-center text-lg-start mb-4 mb-lg-0">
                                             <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">{{resume.date_experience}}</div>
-                                                <div class="small fw-bolder">{{resume.company_experience}}</div>
-                                                <div class="small text-muted">{{resume.location_experience}}</div>
+                                                <div class="text-primary fw-bolder mb-2">{{experience.date_experience}}</div>
+                                                <div class="small fw-bolder">{{experience.company_experience}}</div>
+                                                <div class="small text-muted">{{experience.location_experience}}</div>
                                                 
                                             </div>
                                         </div>
-                                        <div class="col-lg-8"><div>{{resume.description_experience | safe}}</div>
+                                        <div class="col-lg-8"><div>{{experience.description_experience | safe}}</div>
                                         
                                 </div>
                                 {% endfor %}
@@ -47,22 +47,22 @@
                             <h2 class="text-secondary fw-bolder mb-4">{{resume_title.title_education}}</h2>
                             <!-- Education Card 1-->
                             <div class="card shadow border-0 rounded-4 mb-5">
-                                {% for resume in resumes %}
+                                {% for education in educations %}
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
                                         <div class="col text-center text-lg-start mb-4 mb-lg-0">
                                             <div class="bg-light p-4 rounded-4">
-                                                <div class="text-secondary fw-bolder mb-2">{{resume.date_education}}</div>
+                                                <div class="text-secondary fw-bolder mb-2">{{education.date_education}}</div>
                                                 <div class="mb-2">
-                                                    <div class="small fw-bolder">{{resume.school_education}}</div>
-                                                    <div class="small text-muted">{{resume.location_education}}</div>
+                                                    <div class="small fw-bolder">{{education.school_education}}</div>
+                                                    <div class="small text-muted">{{education.location_education}}</div>
                                                 </div>
                                                 <div class="fst-italic">
-                                                    <div class="small text-muted">{{resume.departman_education}}</div>
+                                                    <div class="small text-muted">{{education.departman_education}}</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-8"><div>{{resume.description_education | safe}}</div>
+                                        <div class="col-lg-8"><div>{{education.description_education | safe}}</div>
                                 </div>
                                 {% endfor %}
                             </div>
@@ -81,11 +81,11 @@
                                             <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-tools"></i></div>
                                             <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">{{resume_title.title_skills}}</span></h3>
                                         </div>
-                                        {% for resume in resumes %}
+                                        {% for skill in skills %}
                                         <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{resumes.text1_skills}}</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{resumes.text2_skills}}</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{resumes.text3_skills}}</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{skill.text1_skills}}</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{skill.text2_skills}}</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{skill.text3_skills}}</div></div>
                                         </div>
                                         {% endfor %}
                                     </div>
@@ -95,11 +95,11 @@
                                             <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-code-slash"></i></div>
                                             <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">{{resume_title.title_languages}}</span></h3>
                                         </div>
-                                        {% for resume in resumes %}
+                                        {% for language in languages %}
                                         <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{resume.text1_languages}}</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{resume.text2_languages}}</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{resume.text3_languages}}</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{language.text1_languages}}</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{language.text2_languages}}</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{language.text3_languages}}</div></div>
                                         </div>
                                         {% endfor %}
                                     </div>

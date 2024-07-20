@@ -76,26 +76,54 @@ class Projects(models.Model):
 
 class Resume(models.Model):
     title_resume = models.CharField(max_length=300, null=True, blank=True)
-
     title_experience = models.CharField(max_length=300, null=True, blank=True)
+    title_education = models.CharField(max_length=300, null=True, blank=True) 
+    title_skills = models.CharField(max_length=500, null=True, blank=True)
+    title_languages = models.CharField(max_length=500, null=True, blank=True)
+    
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("Resume")
+        verbose_name_plural = ("Özgeçmiş")
+
+class Experience(models.Model):
     date_experience = models.CharField(max_length=500, null=True, blank=True)
     company_experience = models.CharField(max_length=700, null=True, blank=True)
     location_experience = models.CharField(max_length=700, null=True, blank=True)
     description_experience = RichTextField(null=True, blank=True)
 
-    title_education = models.CharField(max_length=300, null=True, blank=True)
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("Experience")
+        verbose_name_plural = ("Deneyim")
+
+class Education(models.Model):
     date_education = models.CharField(max_length=500, null=True, blank=True)
     school_education = models.CharField(max_length=700, null=True, blank=True)
     location_education = models.CharField(max_length=700, null=True, blank=True)
     departman_education = models.CharField(max_length=1000, null=True, blank=True)
     description_education = RichTextField(null=True, blank=True)
 
-    title_skills = models.CharField(max_length=500, null=True, blank=True)
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("Education")
+        verbose_name_plural = ("Eğitim")
+
+class Skills(models.Model):
     text1_skills = models.TextField(null=True, blank=True)
     text2_skills = models.TextField(null=True, blank=True)
     text3_skills = models.TextField(null=True, blank=True)
 
-    title_languages = models.CharField(max_length=500, null=True, blank=True)
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("Skills")
+        verbose_name_plural = ("Yetenekler")
+
+class Language(models.Model):
     text1_languages = models.TextField(null=True, blank=True)
     text2_languages = models.TextField(null=True, blank=True)
     text3_languages = models.TextField(null=True, blank=True)
@@ -103,14 +131,8 @@ class Resume(models.Model):
     date = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = ("Resume")
-        verbose_name_plural = ("Özgeçmiş")
-
-
-    
-
-
-
+        verbose_name = ("Language")
+        verbose_name_plural = ("Diller")
 
 
 
