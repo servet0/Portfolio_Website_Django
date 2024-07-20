@@ -67,6 +67,7 @@ class Projects(models.Model):
     name = models.CharField(max_length=500, null=True, blank=True)
     description = RichTextField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to='project_image')
+    url = models.URLField(null=True, blank=True, verbose_name="Proje linki")
 
     date = models.DateTimeField(auto_now=True)
 

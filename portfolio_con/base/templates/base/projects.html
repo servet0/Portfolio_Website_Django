@@ -18,6 +18,9 @@
                                     <div class="d-flex align-items-center">
                                         <div class="p-5">
                                             <h2 class="fw-bolder">{{project.name}}</h2>
+                                            {% if project.url %}
+                                            <a href="{{project.url}}" target="_blank" rel="noopener noreferrer">Proje Linki</a>
+                                            {% endif %}
                                             <p>{{project.description | safe}}</p>
                                         </div>
                                         {% if project.image %}
