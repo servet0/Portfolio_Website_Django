@@ -23,6 +23,7 @@ def projects(request):
     socials = SocialMedia.objects.all().order_by('date')
     footers = Footer.objects.all().order_by('date')
     projects = Projects.objects.all().order_by('-date')
+    project = Projects.objects.first()
 
     context = {'navbars': navbars,
                'mains': mains,
@@ -30,6 +31,7 @@ def projects(request):
                'socials': socials,
                'footers': footers,
                'projects': projects,
+               'project': project,
                }
 
     return render(request, 'base/projects.html', context)
