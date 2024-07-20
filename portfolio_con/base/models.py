@@ -65,7 +65,7 @@ class Footer(models.Model):
 class Projects(models.Model):
     title = models.CharField(max_length=300, null=True, blank=True)
     name = models.CharField(max_length=500, null=True, blank=True)
-    description = RichTextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to='project_image')
     url = models.URLField(null=True, blank=True, verbose_name="Proje linki")
 
