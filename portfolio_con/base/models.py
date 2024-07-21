@@ -157,7 +157,14 @@ class Policy(models.Model):
         verbose_name = ("Policy")
         verbose_name_plural = ("Privacy metni")
 
+class ContactName(models.Model):
+    name = models.TextField(null=True, blank=True)
 
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("ContactName")
+        verbose_name_plural = ("İletişim sayfasının başındaki yazı")
 
 
 
