@@ -135,6 +135,29 @@ class Language(models.Model):
         verbose_name = ("Language")
         verbose_name_plural = ("Diller")
 
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.IntegerField(max_length=11)
+    message = models.TextField()
+    
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("Contact")
+        verbose_name_plural = ("İletişim")
+
+class ContactTitle(models.Model):
+    title = models.CharField(max_length=300, null=True, blank=True)
+
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("ContactTitle")
+        verbose_name_plural = ("İletişim sayfasındaki yazı")
+
+
+
 
 
 

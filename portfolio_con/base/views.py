@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Navbar, Main, About, SocialMedia, Footer, Projects, Resume, Experience, Education, Skills, Language
+from django.shortcuts import render, redirect
+from .models import Navbar, Main, About, SocialMedia, Footer, Projects, Resume, Experience, Education, Skills, Language, Contact, ContactTitle
+from .forms import ContactForm
 
 def home(request):
     navbars = Navbar.objects.first()
@@ -65,5 +66,26 @@ def resume(request):
                }
     
     return render(request, 'base/resume.html', context)
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact')  # İletişim başarıyla gönderildiyse yönlendir
+    else:
+        form = ContactForm()
+
+    navbars = Navbar.objects.first()
+    mains = Main.objects.all().order_by('date')
+    abouts = About.objects.all().order_by('date')
+    socials = SocialMedia.objects.all().order_by('date')
+    footers = Footer.objects.all().order_by('date')
+    contactTitles = ContactTitle.objects.first()
+    
+
+    context = {'navbars':navbars, 'mains':mains, 'abouts':abouts, 'socials':socials, 'footers':footers, 'contactTitles': contactTitles}
+
+    return render(request, 'base/contact.html', context)
 
 # Create your views here.
