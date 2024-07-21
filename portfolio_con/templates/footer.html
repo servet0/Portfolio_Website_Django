@@ -6,11 +6,11 @@
         <div class="row align-items-center justify-content-between flex-column flex-sm-row">
             <div class="col-auto"><div class="small m-0">{{footer.copyright}} &copy; {{footer.copyright_text}}</div></div>
             <div class="col-auto">
-                <a class="small" href="#!">{{footer.privacy}}</a>
+                <a class="small" href="{% url 'privacy' %}">{{footer.privacy}}</a>
                 <span class="mx-1">&middot;</span>
-                <a class="small" href="#!">{{footer.terms}}</a>
+                <a class="small" href="{% url 'terms' %}">{{footer.terms}}</a>
                 <span class="mx-1">&middot;</span>
-                <a class="small" href="#!">{{footer.contact}}</a>
+                <a class="small" href="{% url 'contact' %}">{{footer.contact}}</a>
             </div>
         </div>
     </div>

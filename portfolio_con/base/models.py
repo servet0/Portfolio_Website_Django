@@ -147,6 +147,16 @@ class Contact(models.Model):
         verbose_name = ("Contact")
         verbose_name_plural = ("İletişim")
 
+class Policy(models.Model):
+    privacy = RichTextField(null=True, blank=True)
+    terms = RichTextField(null=True, blank=True)
+
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("Policy")
+        verbose_name_plural = ("Privacy metni")
+
 
 
 
