@@ -147,14 +147,6 @@ class Contact(models.Model):
         verbose_name = ("Contact")
         verbose_name_plural = ("İletişim")
 
-class ContactTitle(models.Model):
-    title = models.CharField(max_length=300, null=True, blank=True)
-
-    date = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name = ("ContactTitle")
-        verbose_name_plural = ("İletişim sayfasındaki yazı")
 
 
 

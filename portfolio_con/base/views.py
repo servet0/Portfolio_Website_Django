@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Navbar, Main, About, SocialMedia, Footer, Projects, Resume, Experience, Education, Skills, Language, Contact, ContactTitle
+from .models import Navbar, Main, About, SocialMedia, Footer, Projects, Resume, Experience, Education, Skills, Language, Contact
 from .forms import ContactForm
 
 def home(request):
@@ -67,6 +67,7 @@ def resume(request):
     
     return render(request, 'base/resume.html', context)
 
+# views.py
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -81,10 +82,9 @@ def contact(request):
     abouts = About.objects.all().order_by('date')
     socials = SocialMedia.objects.all().order_by('date')
     footers = Footer.objects.all().order_by('date')
-    contactTitles = ContactTitle.objects.first()
     
 
-    context = {'navbars':navbars, 'mains':mains, 'abouts':abouts, 'socials':socials, 'footers':footers, 'contactTitles': contactTitles}
+    context = {'form': form, 'navbars': navbars, 'mains': mains, 'abouts': abouts, 'socials': socials, 'footers': footers}
 
     return render(request, 'base/contact.html', context)
 
