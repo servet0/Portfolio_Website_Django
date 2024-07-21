@@ -166,6 +166,15 @@ class ContactName(models.Model):
         verbose_name = ("ContactName")
         verbose_name_plural = ("İletişim sayfasının başındaki yazı")
 
+class ProjectName(models.Model):
+    name = models.TextField(null=True, blank=True)
+
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ("ProjectName")
+        verbose_name_plural = ("Proje sayfasının altındaki yazı")
+
 
 
 
