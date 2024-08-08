@@ -1,5 +1,6 @@
 # Portfolio Website
 
+https://github.com/user-attachments/assets/ca2d50fa-fc20-4bdc-bdb0-c484c581ad6b
 
 ## Kurulum
 
